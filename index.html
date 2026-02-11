@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor traning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Victor traning</h1>
+
+        <nav>
+            <ul>
+                <li><a id="homeid" href="#home">Accueil</a></li>
+                <li><a id="aboutid" href="#about">À propos</a></li>
+                <li><a id="calculatorid" href="#calculator ">calculator</a></li>
+                <li><a id="Contactid" href="#contact">Contact</a></li>
+                
+            </ul>
+        </nav>
+
+    </header>
+    
+    <main>
+        <section id="home" class="contenu">
+        <h2>Home</h2>
+            <p>welcome  chez Victor Corporations. 
+                Nous innovons pour construire l'avenir de la technologie avec intégrité et excellence. 
+                The basic data types have been dealt with in the previous chapter. Now it's time
+                to look at a slightly more complicated topic: arrays and objects. In the previous
+                chapter, you saw variables that held just a single value. To allow for more complex
+                programming, objects and arrays can contain multiple values.
+                You can look at objects as a collection of properties and methods. Properties can
+                be thought of as variables. They can be simple data structures such as numbers
+                and strings, but also other objects. 
+            </p>
+
+
+        </section>
+        <section id="calculator" class="contenu">
+            <div class="card">
+            <h2>piga hesabu haraka </h2>
+                
+            <div id="ecran" style="background: #eeeaea; padding: 10px; text-align: right; font-size: 1.5em; margin-bottom: 10px; border-radius: 5px; min-height: 40px;">0</div>
+        
+        <div class="touches">
+            <button onclick="putvalue('7')">7</button>
+            <button onclick="putvalue('8')">8</button>
+            <button onclick="putvalue('9')">9</button>
+            <button onclick=" putop('/')">/</button>
+            
+            <button onclick="putvalue('4')">4</button>
+            <button onclick="putvalue('5')">5</button>
+            <button onclick="putvalue('6')">6</button>
+            <button onclick="putop('*')">x</button>
+            
+            <button onclick="putvalue('1')">1</button>
+            <button onclick="putvalue('2')">2</button>
+            <button onclick="putvalue('3')">3</button>
+            <button onclick="putop('-')">-</button>
+            
+            <button onclick="putvalue('0')">0</button>
+            <button onclick="clean()">C</button>
+            <button onclick="calResulta()">=</button>
+            <button onclick="putop('+')">+</button>
+        </div>
+
+            </div>
+        </section>
+        
+        <section id="about" class="contenu">
+            <div class="card">
+            <h2>À propos</h2>
+                <p>Ici on parle d'objets et de tableaux en JavaScript !</p>
+            </div>
+        </section> 
+    </main>
+    <footer>
+        <p>&copy; 2026 Victor Corporations </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
