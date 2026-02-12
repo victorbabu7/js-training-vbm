@@ -267,10 +267,14 @@ liencalcul.addEventListener('click', function(event) {
 function calculator(num1, num2, operation) 
 {
     if (operation == '+') { return num1 + num2; }
-    else if (operation == '-') { return num1 - num2; }
-    else if (operation == '*') { return num1 * num2; }
-    else if (operation == '/') { return num1 / num2; }
+    else if (operation == '-')
+    { return num1 - num2; }
+    else if (operation == '*') 
+    { return num1 * num2; }
+    else if (operation == '/') 
+    { return num1 / num2; }
     else { return num1 + num2; }
+
 }
 
 let memoireNum1 = "";
@@ -317,4 +321,43 @@ function clean() {
     opChoisie = "";
     etape = 1;
     document.getElementById('ecran').innerText = "0";
+}
+
+
+class persone {
+    constructor(fistName, lastName, age) {
+        this.fistName = fistName;
+        this.lastName = lastName;
+        this.age = age;
+    }  
+
+}
+
+
+// execice chap 7 classe : initation on class and manipulation 
+
+class ordinateurs{
+    constructor(model, version, color, ram, storage) {
+        this.model = model;
+        this.version = version;
+        this.color = color;
+        this.ram = ram;
+        this.storage = storage;
+    }
+}
+let arrayordinateurs = []; //array for stock the object
+
+function addcomputer()
+{
+let model = prompt('enter the model of computer');
+let version = prompt('enter the version of ordinateur');
+let color = prompt('enter couleur of ordinateur');
+let ram = prompt('enter the ram of computer');
+let storage = prompt('enter the storage of computer');
+
+let pcnew = new ordinateurs(model, version, color, ram, storage);
+
+arrayordinateurs.push(pcnew);
+console.log(' computer ime  ingiya kwenye stock');
+console.table(arrayordinateurs);
 }

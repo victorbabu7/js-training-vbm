@@ -18,22 +18,22 @@ header {
 }
 
 nav ul {
-    display: flex;          /* Aligne les éléments horizontalement */
-    justify-content: center; /* Centre le menu horizontalement */
-    list-style-type: none;  /* Enlève les petits points blancs */
-    padding: 0;             /* Enlève l'espace vide à gauche */
-    margin: 0;              /* Enlève les marges par défaut */
+    display: flex;          
+    justify-content: center;
+    list-style-type: none;  
+    padding: 0;            
+    margin: 0;              
 }
 
 nav li {
-    margin: 0 15px;         /* Ajoute de l'espace entre chaque lien */
+    margin: 0 15px;         
 }
 
 nav a {
-    color: #3498db;         /* Change le bleu foncé par un bleu plus clair et lisible */
-    text-decoration: none;  /* Enlève le soulignement moche */
-    font-weight: bold;      /* Met le texte un peu plus épais */
-    transition: 0.3s;       /* Pour un effet fluide au survol */
+    color: #3498db;        
+    text-decoration: none;  
+    font-weight: bold;      
+    transition: 0.3s;       
 }
 
 
