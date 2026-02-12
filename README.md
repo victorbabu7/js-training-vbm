@@ -1,7 +1,7 @@
 
 # js-training-vbm
 =======
-# JS Training - Chapters 1 to 6 js from babu
+# JS Training - Chapters 1 to  7 js from babu
 
 This project contains my progress through chapters 1 to 6 of JavaScript. It includes coding exercises and a functional calculator.
 
@@ -22,3 +22,23 @@ This project contains my progress through chapters 1 to 6 of JavaScript. It incl
 - A calculator that processes additions, subtractions, multiplications, and divisions.
 - Console-based exercises on complex objects and arrays.
 
+## New exercise: Inventory Management (Chapter 7 - Classes)
+
+I added a stock section to practice Classes 
+Key points:
+
+   - **Classes**: Created ordinateurs model with a constructor for model, version, color, RAM, and storage.
+
+   -**Dynamic**: The addcomputer() function:
+
+        Gets data via prompt.
+
+        Creates a new object from the class.
+
+        Saves it in the arrayordinateurs array.
+
+    -**Console**: Uses console.table() to show the stock clearly.
+
+How to test:
+
+Run addcomputer() in the console, fill the info, and see the stock update.
