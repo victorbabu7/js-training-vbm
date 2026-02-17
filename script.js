@@ -255,10 +255,21 @@ liencalcul.addEventListener('click', function(event) {
         section.classList.remove('active');
     });
 
-    sectioncalcul.classList.add('active');
-
+sectioncalcul.classList.add('active');
 
 }); 
+
+const liencomputer = document.getElementById('ordinateurid');
+const sectioncomputer = document.getElementById('selection_computer');
+
+liencomputer.addEventListener('click', function(event) {
+    event.preventDefault();
+    
+    document.querySelectorAll('.contenu').forEach(section => {
+        section.classList.remove('active');
+    }); 
+    sectioncomputer.classList.add('active');
+});
 
 
 // calculator section
@@ -337,15 +348,48 @@ class persone {
 // execice chap 7 classe : initation on class and manipulation 
 
 class ordinateurs{
+    #storage; 
     constructor(model, version, color, ram, storage) {
-        this.model = model;
-        this.version = version;
-        this.color = color;
-        this.ram = ram;
-        this.storage = storage;
+    this.model = model;
+    this.version = version;
+    this.color = color;
+    this.ram = ram;
+    this.#storage = storage;
+    }
+    get storage() {
+    return this.#storage + 'GB';
+    }
+    set storage(newvaleur){
+     if (newvaleur < 0 || newvaleur > 100000){
+         console.log('SVP  enter a valid storage value');
+        } else {
+            this.#storage = newvaleur;
+        }   
     }
 }
-let arrayordinateurs = []; //array for stock the object
+class laptop extends ordinateurs{
+    constructor(model, version, color, ram, storage, autonomy){
+    super(model, version, color, ram, storage);
+    this.autonomy=autonomy;
+    }
+    verifiyautonomy(){
+    if(this.autonomy<1 || this.autonomy >24){ console.log('please enter a valid autonomy value');}
+        else{ console.log('autonomy dela   baterie  is ',this.autonomy, 'heures');}
+    }
+}
+
+let arrayordinateurs = []; 
+
+ordinateurs.prototype.ON=function(){
+    console.log("a computer" + this.model +" is so clean and it is on");
+}
+ordinateurs.prototype.explotationSysteme=function(){
+    if(this.model.toLowerCase()=='hp'||this.model.toLowerCase()=='dell'||this.model.toLowerCase()=='lenovo'){   
+    console.log('the exploitation systeme of computer '+  this.model   +'is windows 10');
+}
+else if(this.model.toLowerCase()=='macbook'||this.model.toLowerCase()==' imac'  ||  this.model.toLowerCase()=='  macbook pro  '){
+    console.log('the exploitation systeme of computer  '  +  this.model  +' is mac os ');
+}}
 
 function addcomputer()
 {
@@ -353,11 +397,50 @@ let model = prompt('enter the model of computer');
 let version = prompt('enter the version of ordinateur');
 let color = prompt('enter couleur of ordinateur');
 let ram = prompt('enter the ram of computer');
-let storage = prompt('enter the storage of computer');
+let  storage = prompt('enter the storage of computer');
+let yeslaptop = confirm('is it a laptop ?');
 
-let pcnew = new ordinateurs(model, version, color, ram, storage);
+if( model == ""|| version == "" || color == ""|| ram == "" || storage == ""){
+    console.log("please recommencer you are missing a verb")
+    return
+};
+let pcnew;
+if (yeslaptop) {
+    let autonimy = prompt('enter the autonomy of computer')
+    pcnew = new laptop(model, version, color, ram, parseFloat(storage), parseFloat(autonimy))
+}
+else { 
+    pcnew = new ordinateurs(model, version, color, ram, parseFloat(storage))
+}
 
 arrayordinateurs.push(pcnew);
-console.log(' computer ime  ingiya kwenye stock');
+
+console.log("verification prototype ");
+
 console.table(arrayordinateurs);
+pcnew.ON();
+pcnew.explotationSysteme();
 }
+
+
+/*class Eleve{
+    constructor(nom){
+     this.nom=nom;
+    }
+    methodesafficherNom(){
+        console.log('a name of  your ctudend is ',this.nom);
+    }
+    }
+
+    let tableNom=[];
+
+    function  sasiernom(){
+        let nom =prompt('enter the name of student ');
+        let eleve1=new Eleve(nom);
+        tableNom.push(eleve1);
+        eleve1.methodesafficherNom();
+        console.table(tableNom);
+    }
+    sasiernom();
+
+*/
